@@ -2756,6 +2756,7 @@ int
 hivex_node_set_value (hive_h *h, hive_node_h node,
                       const hive_set_value *val, int flags)
 {
+  int i;
   hive_value_h *prev_values = hivex_node_values (h, node);
   if (prev_values == NULL)
     return -1;
@@ -2763,7 +2764,8 @@ hivex_node_set_value (hive_h *h, hive_node_h node,
   int retval = -1;
 
   size_t nr_values = 0;
-  for (hive_value_h *itr = prev_values; *itr != 0; ++itr)
+  hive_value_h *itr;
+  for (itr = prev_values; *itr != 0; ++itr)
     ++nr_values;
 
   hive_set_value *values = malloc ((nr_values + 1) * (sizeof (hive_set_value)));
@@ -2819,7 +2821,7 @@ hivex_node_set_value (hive_h *h, hive_node_h node,
   retval = hivex_node_set_values (h, node, nr_values, values, 0);
 
  leave_partial:
-  for (int i = 0; i < alloc_ct; i += 2) {
+  for (i = 0; i < alloc_ct; i += 2) {
     free (values[i / 2].value);
     if (i + 1 < alloc_ct && values[i / 2].key != NULL)
       free (values[i / 2].key);
