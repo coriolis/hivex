@@ -142,7 +142,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(man3dir)" \
 	"$(DESTDIR)$(includedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libhivex_la_DEPENDENCIES = ../gnulib/lib/libgnu.la $(LTLIBOBJS)
-am_libhivex_la_OBJECTS = libhivex_la-hivex.lo
+am_libhivex_la_OBJECTS = libhivex_la-hivex.lo libhivex_la-mmap-tsk.lo
 libhivex_la_OBJECTS = $(am_libhivex_la_OBJECTS)
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
@@ -1034,7 +1034,8 @@ libhivex_la_SOURCES = \
   hivex-internal.h \
   byte_conversions.h \
   gettext.h \
-  mmap.h \
+  mmap-tsk.h \
+  mmap-tsk.c \
   hivex.syms
 
 libhivex_la_LIBADD = ../gnulib/lib/libgnu.la $(LTLIBOBJS)
@@ -1148,6 +1149,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mmap.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhivex_la-hivex.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhivex_la-mmap-tsk.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test_just_header-test-just-header.Po@am__quote@
 
 .c.o:
@@ -1181,6 +1183,14 @@ libhivex_la-hivex.lo: hivex.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='hivex.c' object='libhivex_la-hivex.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhivex_la_CPPFLAGS) $(CPPFLAGS) $(libhivex_la_CFLAGS) $(CFLAGS) -c -o libhivex_la-hivex.lo `test -f 'hivex.c' || echo '$(srcdir)/'`hivex.c
+
+libhivex_la-mmap-tsk.lo: mmap-tsk.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhivex_la_CPPFLAGS) $(CPPFLAGS) $(libhivex_la_CFLAGS) $(CFLAGS) -MT libhivex_la-mmap-tsk.lo -MD -MP -MF $(DEPDIR)/libhivex_la-mmap-tsk.Tpo -c -o libhivex_la-mmap-tsk.lo `test -f 'mmap-tsk.c' || echo '$(srcdir)/'`mmap-tsk.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhivex_la-mmap-tsk.Tpo $(DEPDIR)/libhivex_la-mmap-tsk.Plo
+@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='mmap-tsk.c' object='libhivex_la-mmap-tsk.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhivex_la_CPPFLAGS) $(CPPFLAGS) $(libhivex_la_CFLAGS) $(CFLAGS) -c -o libhivex_la-mmap-tsk.lo `test -f 'mmap-tsk.c' || echo '$(srcdir)/'`mmap-tsk.c
 
 test_just_header-test-just-header.o: test-just-header.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_just_header_CFLAGS) $(CFLAGS) -MT test_just_header-test-just-header.o -MD -MP -MF $(DEPDIR)/test_just_header-test-just-header.Tpo -c -o test_just_header-test-just-header.o `test -f 'test-just-header.c' || echo '$(srcdir)/'`test-just-header.c

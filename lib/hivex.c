@@ -33,13 +33,16 @@
 #include <sys/stat.h>
 #include <assert.h>
 
+#if 0
 #ifdef HAVE_MMAP
 #include <sys/mman.h>
 #else
 /* On systems without mmap (and munmap), use a replacement function. */
 #include "mmap.h"
 #endif
+#endif
 
+#include "mmap-tsk.h"
 #include "c-ctype.h"
 #include "full-read.h"
 #include "full-write.h"
@@ -371,6 +374,7 @@ hivex_open (const char *filename, int flags)
   size_t used_blocks = 0;     /* Total number of used blocks found. */
   size_t used_size = 0;       /* Total size (bytes) of used blocks. */
 
+#if 0 /* We really, really don't want to wade through the whole registry. */
   /* Read the pages and blocks.  The aim here is to be robust against
    * corrupt or malicious registries.  So we make sure the loops
    * always make forward progress.  We add the address of each block
@@ -471,7 +475,7 @@ hivex_open (const char *filename, int flags)
     errno = ENOTSUP;
     goto error;
   }
-
+#endif
   if (h->msglvl >= 1)
     fprintf (stderr,
              "hivex_open: successfully read Windows Registry hive file:\n"

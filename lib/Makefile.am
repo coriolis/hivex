@@ -29,7 +29,8 @@ libhivex_la_SOURCES = \
   hivex-internal.h \
   byte_conversions.h \
   gettext.h \
-  mmap.h \
+  mmap-tsk.h \
+  mmap-tsk.c \
   hivex.syms
 
 libhivex_la_LIBADD =  ../gnulib/lib/libgnu.la $(LTLIBOBJS)

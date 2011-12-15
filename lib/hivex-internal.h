@@ -48,8 +48,8 @@ struct hive_h {
 #define IS_VALID_BLOCK(h,off)               \
   (((off) & 3) == 0 &&                      \
    (off) >= 0x1000 &&                       \
-   (off) < (h)->size &&                     \
-   BITMAP_TST((h)->bitmap,(off)))
+   (off) < (h)->size)                 
+//   BITMAP_TST((h)->bitmap,(off)))
 
   /* Fields from the header, extracted from little-endianness hell. */
   size_t rootoffs;              /* Root key offset (always an nk-block). */

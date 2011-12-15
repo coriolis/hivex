@@ -52,10 +52,6 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 @HAVE_HIVEXSH_TRUE@am__append_1 = sh
-@HAVE_OCAML_TRUE@am__append_2 = ocaml
-@HAVE_PERL_TRUE@am__append_3 = perl regedit
-@HAVE_PYTHON_TRUE@am__append_4 = python
-@HAVE_RUBY_TRUE@am__append_5 = ruby
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
@@ -169,8 +165,7 @@ AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
 	distdir dist dist-all distcheck
 ETAGS = etags
 CTAGS = ctags
-DIST_SUBDIRS = gnulib/lib generator lib images gnulib/tests xml po sh \
-	ocaml perl regedit python ruby
+DIST_SUBDIRS = gnulib/lib generator lib images gnulib/tests po sh
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -996,9 +991,26 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = gnulib/lib generator lib images gnulib/tests xml po \
-	$(am__append_1) $(am__append_2) $(am__append_3) \
-	$(am__append_4) $(am__append_5)
+
+#SUBDIRS = gnulib/lib generator lib images gnulib/tests xml po
+SUBDIRS = gnulib/lib generator lib images gnulib/tests po \
+	$(am__append_1)
+
+#if HAVE_OCAML
+#SUBDIRS += ocaml
+#endif
+#
+#if HAVE_PERL
+#SUBDIRS += perl regedit
+#endif
+#
+#if HAVE_PYTHON
+#SUBDIRS += python
+#endif
+#
+#if HAVE_RUBY
+#SUBDIRS += ruby
+#endif
 EXTRA_DIST = hivex.pc hivex.pc.in README LICENSE
 
 # Pkgconfig.

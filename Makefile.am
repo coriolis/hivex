@@ -20,27 +20,28 @@ ACLOCAL_AMFLAGS = -I m4
 # Work around broken libtool.
 export to_tool_file_cmd=func_convert_file_noop
 
-SUBDIRS = gnulib/lib generator lib images gnulib/tests xml po
+#SUBDIRS = gnulib/lib generator lib images gnulib/tests xml po
+SUBDIRS = gnulib/lib generator lib images gnulib/tests po
 
 if HAVE_HIVEXSH
 SUBDIRS += sh
 endif
 
-if HAVE_OCAML
-SUBDIRS += ocaml
-endif
-
-if HAVE_PERL
-SUBDIRS += perl regedit
-endif
-
-if HAVE_PYTHON
-SUBDIRS += python
-endif
-
-if HAVE_RUBY
-SUBDIRS += ruby
-endif
+#if HAVE_OCAML
+#SUBDIRS += ocaml
+#endif
+#
+#if HAVE_PERL
+#SUBDIRS += perl regedit
+#endif
+#
+#if HAVE_PYTHON
+#SUBDIRS += python
+#endif
+#
+#if HAVE_RUBY
+#SUBDIRS += ruby
+#endif
 
 EXTRA_DIST = hivex.pc hivex.pc.in README LICENSE
 
