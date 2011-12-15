@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hivex\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-29 11:08+0000\n"
+"PO-Revision-Date: 2011-03-22 15:29+0000\n"
+"Last-Translator: rjones <rjones@redhat.com>\n"
+"Language-Team: Polish <None>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+
+#: sh/hivexsh.c:156
+#, c-format
+msgid ""
+"\n"
+"Welcome to hivexsh, the hivex interactive shell for examining\n"
+"Windows Registry binary hive files.\n"
+"\n"
+"Type: 'help' for help summary\n"
+"      'quit' to quit the shell\n"
+"\n"
+msgstr ""
+"\n"
+"Witaj w hivexsh, interaktywnej powłoce hivex do sprawdzania\n"
+"binarnych plików typu \"hive\" Rejestru systemu Windows.\n"
+"\n"
+"Proszę podać: \"help\", aby uzyskać podsumowanie pomocy\n"
+"              \"quit\", aby zakończyć powłokę\n"
+"\n"
+
+#: sh/hivexsh.c:270
+#, c-format
+msgid "hivexsh: error getting parent of node %zu\n"
+msgstr "hivexsh: błąd podczas uzyskiwania nadrzędnego węzła %zu\n"
+
+#: sh/hivexsh.c:280
+#, c-format
+msgid "hivexsh: error getting node name of node %zx\n"
+msgstr "hivexsh: błąd podczas uzyskiwania nazwy węzła %zx\n"
+
+#: sh/hivexsh.c:419
+#, c-format
+msgid "hivexsh: you must load a hive file first using 'load hivefile'\n"
+msgstr ""
+"hivexsh: należy najpierw wczytać plik \"hive\" używając \"load plik_hive\"\n"
+
+#: sh/hivexsh.c:440
+#, c-format
+msgid "hivexsh: unknown command '%s', use 'help' for help summary\n"
+msgstr ""
+"hivexsh: nieznane polecenie \"%s\", należy użyć \"help\", aby uzyskać "
+"podsumowanie pomocy\n"
+
+#: sh/hivexsh.c:450
+#, c-format
+msgid "hivexsh: load: no hive file name given to load\n"
+msgstr "hivexsh: load: nie podano nazwy pliku \"hive\" do wczytania\n"
+
+#: sh/hivexsh.c:466
+#, c-format
+msgid ""
+"hivexsh: failed to open hive file: %s: %m\n"
+"\n"
+"If you think this file is a valid Windows binary hive file (_not_\n"
+"a regedit *.reg file) then please run this command again using the\n"
+"hivexsh option '-d' and attach the complete output _and_ the hive file\n"
+"which fails into a bug report at https://bugzilla.redhat.com/\n"
+"\n"
+msgstr ""
+"hivexsh: otwarcie pliku \"hive\" nie powiodło się: %s: %m\n"
+"\n"
+"Jeśli ten plik jest binarnym plikiem \"hive\" systemu Windows (a _nie_\n"
+"plikiem *.reg programu regedit), proszę wykonać te polecenie ponownie,\n"
+"używając opcji \"-d\" programu hivexsh i dołączyć pełne wyjście _oraz_ ten\n"
+"plik \"hive\" do zgłoszenia błędu na https://bugzilla.redhat.com/\n"
+"\n"
+
+#: sh/hivexsh.c:499 sh/hivexsh.c:608 sh/hivexsh.c:1074
+#, c-format
+msgid "hivexsh: '%s' command should not be given arguments\n"
+msgstr "hivexsh: polecenie \"%s\" nie przyjmuje parametrów\n"
+
+#: sh/hivexsh.c:541
+#, c-format
+msgid ""
+"%s: %s: \\ characters in path are doubled - are you escaping the path "
+"parameter correctly?\n"
+msgstr ""
+"%s: %s: znaki \\ w ścieżce są podwójne - czy parametr ścieżki jest poprawnie "
+"poprzedzony znakiem modyfikacji?\n"
+
+#: sh/hivexsh.c:579
+#, c-format
+msgid "hivexsh: cd: subkey '%s' not found\n"
+msgstr "hivexsh: cd: nie odnaleziono podklucza \"%s\"\n"
+
+#: sh/hivexsh.c:597
+#, c-format
+msgid ""
+"Navigate through the hive's keys using the 'cd' command, as if it\n"
+"contained a filesystem, and use 'ls' to list the subkeys of the\n"
+"current key.  Full documentation is in the hivexsh(1) manual page.\n"
+msgstr ""
+"Należy nawigować między kluczami \"hive\" używając polecenia \"cd\", jakby\n"
+"zawierały system plików oraz \"ls\" do wyświetlania podkluczy bieżącego\n"
+"klucza. Pełna dokumentacja znajduje się na stronie podręcznika hivexsh(1).\n"
+
+#: sh/hivexsh.c:672
+#, c-format
+msgid "%s: %s: key not found\n"
+msgstr "%s: %s: nie odnaleziono klucza\n"
+
+#: sh/hivexsh.c:848 sh/hivexsh.c:952 sh/hivexsh.c:978 sh/hivexsh.c:1007
+#, c-format
+msgid "%s: %s: invalid integer parameter (%s returned %d)\n"
+msgstr "%s: %s: nieprawidłowy parametr liczby całkowitej (%s zwróciło %d)\n"
+
+#: sh/hivexsh.c:853 sh/hivexsh.c:958 sh/hivexsh.c:984 sh/hivexsh.c:1013
+#, c-format
+msgid "%s: %s: integer out of range\n"
+msgstr "%s: %s: liczba całkowita spoza zakresu\n"
+
+#: sh/hivexsh.c:875 sh/hivexsh.c:893
+#, c-format
+msgid "hivexsh: setval: unexpected end of input\n"
+msgstr "hivexsh: setval: nieoczekiwany koniec wejścia\n"
+
+#: sh/hivexsh.c:914 sh/hivexsh.c:933
+#, c-format
+msgid ""
+"hivexsh: string(utf16le): only 7 bit ASCII strings are supported for input\n"
+msgstr ""
+"hivexsh: string(utf16le): tylko 7 bitowe ciągi ASCII są obsługiwane dla "
+"wejścia\n"
+
+#: sh/hivexsh.c:1044
+#, c-format
+msgid "hivexsh: setval: trailing garbage after hex string\n"
+msgstr "hivexsh: setval: uszkodzone wartości po ciągu ósemkowym\n"
+
+#: sh/hivexsh.c:1051
+#, c-format
+msgid ""
+"hivexsh: setval: cannot parse value string, please refer to the man page "
+"hivexsh(1) for help: %s\n"
+msgstr ""
+"hivexsh: setval: nie można przetworzyć ciągu wartości. Proszę zobaczyć "
+"stronę podręcznika hivexsh(1), aby uzyskać pomoc: %s\n"
+
+#: sh/hivexsh.c:1080
+#, c-format
+msgid "hivexsh: del: the root node cannot be deleted\n"
+msgstr "hivexsh: del: główny węzeł nie może zostać usunięty\n"
+
+#: xml/hivexml.c:78
+#, c-format
+msgid "%s: failed to write XML document\n"
+msgstr "%s: zapisanie dokumentu XML nie powiodło się\n"
+
+#: xml/hivexml.c:111
+#, c-format
+msgid "hivexml: missing name of input file\n"
+msgstr "hivexml: brak nazwy pliku wejściowego\n"
+
+#: xml/hivexml.c:130
+#, c-format
+msgid "xmlNewTextWriterFilename: failed to create XML writer\n"
+msgstr "xmlNewTextWriterFilename: utworzenie zapisu XML nie powiodło się\n"

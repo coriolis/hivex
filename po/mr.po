@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hivex\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-29 11:08+0000\n"
+"PO-Revision-Date: 2011-03-22 15:29+0000\n"
+"Last-Translator: sandeeps <sshedmak@redhat.com>\n"
+"Language-Team: Marathi <None>\n"
+"Language: mr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: sh/hivexsh.c:156
+#, c-format
+msgid ""
+"\n"
+"Welcome to hivexsh, the hivex interactive shell for examining\n"
+"Windows Registry binary hive files.\n"
+"\n"
+"Type: 'help' for help summary\n"
+"      'quit' to quit the shell\n"
+"\n"
+msgstr ""
+"\n"
+"hivexsh येथे आपले स्वागत, hivex हे \n"
+"Windows Registry बाइनरी hive फाइल्सचे विश्लेषण करण्यासाठी परस्पर संवाद शेल आहे.\n"
+"\n"
+"टाइप: मदत सारांशकरीता 'help' टाइप करा \n"
+"      शेल पासून बाहेर पडण्यासाठी 'quit'\n"
+"\n"
+
+#: sh/hivexsh.c:270
+#, c-format
+msgid "hivexsh: error getting parent of node %zu\n"
+msgstr "hivexsh: नोड %zu चे पॅरेंट प्राप्त करतेवेळी त्रुटी आढळली\n"
+
+#: sh/hivexsh.c:280
+#, c-format
+msgid "hivexsh: error getting node name of node %zx\n"
+msgstr "hivexsh: नोड %zx चे नोड नाव प्राप्त करतेवेळी त्रुटी आढळली\n"
+
+#: sh/hivexsh.c:419
+#, c-format
+msgid "hivexsh: you must load a hive file first using 'load hivefile'\n"
+msgstr ""
+"hivexsh: 'load hivefile' चा वापर करून तुम्ही hive फाइल प्रथम लोड करायला हवे\n"
+
+#: sh/hivexsh.c:440
+#, c-format
+msgid "hivexsh: unknown command '%s', use 'help' for help summary\n"
+msgstr "hivexsh: अपरिचीत आदेश '%s', मदत सारांशकरीता 'help' चा वापर करा\n"
+
+#: sh/hivexsh.c:450
+#, c-format
+msgid "hivexsh: load: no hive file name given to load\n"
+msgstr "hivexsh: load: लोडकरीता hive फाइल नाव दिले नाही\n"
+
+#: sh/hivexsh.c:466
+#, c-format
+msgid ""
+"hivexsh: failed to open hive file: %s: %m\n"
+"\n"
+"If you think this file is a valid Windows binary hive file (_not_\n"
+"a regedit *.reg file) then please run this command again using the\n"
+"hivexsh option '-d' and attach the complete output _and_ the hive file\n"
+"which fails into a bug report at https://bugzilla.redhat.com/\n"
+"\n"
+msgstr ""
+"hivexsh: hive फाइल उघडण्यास अपयशी: %s: %m\n"
+"\n"
+"ही फाइल वैध Windows बाइनरी hive पाइल (_not_\n"
+"a regedit *.reg file) असल्यास कृपया \n"
+"hivexsh पर्याय '-d' चा वापर करून हे आदेश पुनः चालवा व संपूर्ण आऊटपुट _and_ अपयशी hive "
+"फाइल\n"
+" https://bugzilla.redhat.com/ येथील बग अहवालात जोडा\n"
+"\n"
+
+#: sh/hivexsh.c:499 sh/hivexsh.c:608 sh/hivexsh.c:1074
+#, c-format
+msgid "hivexsh: '%s' command should not be given arguments\n"
+msgstr "hivexsh: '%s' आदेश यांस घटके देऊ नका\n"
+
+#: sh/hivexsh.c:541
+#, c-format
+msgid ""
+"%s: %s: \\ characters in path are doubled - are you escaping the path "
+"parameter correctly?\n"
+msgstr ""
+"%s: %s: \\ मार्गातील अक्षरे दुप्पट केले आहेत - तुम्ही मार्ग संबंधीत घटक योग्यप्रकारे एस्केप "
+"करत आहात?\n"
+
+#: sh/hivexsh.c:579
+#, c-format
+msgid "hivexsh: cd: subkey '%s' not found\n"
+msgstr "hivexsh: cd: सबकि '%s' आढळली नाही\n"
+
+#: sh/hivexsh.c:597
+#, c-format
+msgid ""
+"Navigate through the hive's keys using the 'cd' command, as if it\n"
+"contained a filesystem, and use 'ls' to list the subkeys of the\n"
+"current key.  Full documentation is in the hivexsh(1) manual page.\n"
+msgstr ""
+"'cd' आदेशचा वापर करून हाइव्हच्या किज अंतर्गत, फाइलप्रणाली प्रमाणेच, संचारन करा, \n"
+"व सध्याच्या कि मधील सबकिजच्या सूची करीता 'ls'\n"
+"याचा वापर करा.  संपूर्ण दस्तऐवजीकरण hivexsh(1) मॅन्यूअल पृष्ठात आहे.\n"
+
+#: sh/hivexsh.c:672
+#, c-format
+msgid "%s: %s: key not found\n"
+msgstr "%s: %s: कि आढळली नाही\n"
+
+#: sh/hivexsh.c:848 sh/hivexsh.c:952 sh/hivexsh.c:978 sh/hivexsh.c:1007
+#, c-format
+msgid "%s: %s: invalid integer parameter (%s returned %d)\n"
+msgstr "%s: %s: अवैध इंटीजर घटक (%s ने %d पाठवले)\n"
+
+#: sh/hivexsh.c:853 sh/hivexsh.c:958 sh/hivexsh.c:984 sh/hivexsh.c:1013
+#, c-format
+msgid "%s: %s: integer out of range\n"
+msgstr "%s: %s: इंटीजर व्याप्तीच्या बाहेर आहे\n"
+
+#: sh/hivexsh.c:875 sh/hivexsh.c:893
+#, c-format
+msgid "hivexsh: setval: unexpected end of input\n"
+msgstr "hivexsh: setval: इंपुटची अनेपक्षीत समाप्ति\n"
+
+#: sh/hivexsh.c:914 sh/hivexsh.c:933
+#, c-format
+msgid ""
+"hivexsh: string(utf16le): only 7 bit ASCII strings are supported for input\n"
+msgstr ""
+"hivexsh: string(utf16le): फक्त 7 बिट ASCII अक्षरमाळा इंपुटकरीता समर्थीत आहे\n"
+
+#: sh/hivexsh.c:1044
+#, c-format
+msgid "hivexsh: setval: trailing garbage after hex string\n"
+msgstr "hivexsh: setval: hex स्ट्रिंग नंतर ट्रेलिंग गार्बेज\n"
+
+#: sh/hivexsh.c:1051
+#, c-format
+msgid ""
+"hivexsh: setval: cannot parse value string, please refer to the man page "
+"hivexsh(1) for help: %s\n"
+msgstr ""
+"hivexsh: setval: वॅल्यू स्ट्रिंग वाचणे अशक्य, कृपया मदतीसाठी man page hivexsh(1) पहा: "
+"%s\n"
+
+#: sh/hivexsh.c:1080
+#, c-format
+msgid "hivexsh: del: the root node cannot be deleted\n"
+msgstr "hivexsh: del: रूट नोड नष्ट करणे शक्य आहे\n"
+
+#: xml/hivexml.c:78
+#, c-format
+msgid "%s: failed to write XML document\n"
+msgstr "%s: XML दस्तऐवज लिहण्यास अपयशी\n"
+
+#: xml/hivexml.c:111
+#, c-format
+msgid "hivexml: missing name of input file\n"
+msgstr "hivexml: इंपुट फाइलचे नाव आढळले नाही\n"
+
+#: xml/hivexml.c:130
+#, c-format
+msgid "xmlNewTextWriterFilename: failed to create XML writer\n"
+msgstr "xmlNewTextWriterFilename: XML राईटर निर्माण करण्यास अपयशी\n"

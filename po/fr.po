@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hivex\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-29 11:08+0000\n"
+"PO-Revision-Date: 2011-03-27 20:53+0000\n"
+"Last-Translator: bozzo <b.barnier@gmail.com>\n"
+"Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: sh/hivexsh.c:156
+#, c-format
+msgid ""
+"\n"
+"Welcome to hivexsh, the hivex interactive shell for examining\n"
+"Windows Registry binary hive files.\n"
+"\n"
+"Type: 'help' for help summary\n"
+"      'quit' to quit the shell\n"
+"\n"
+msgstr ""
+"\n"
+"Bienvenue dans hivexsh, l'interpréteur de commandes interactif hivex pour "
+"examiner\n"
+"les fichiers « hive » du registre Windows.\n"
+"\n"
+"Tapez: « help » pour un résumé de l'aide\n"
+"      « quit » pour quitter l'interpréteur de commandes\n"
+"\n"
+
+#: sh/hivexsh.c:270
+#, c-format
+msgid "hivexsh: error getting parent of node %zu\n"
+msgstr "hivexsh : erreur en récupérant le parent du nœud %zu\n"
+
+#: sh/hivexsh.c:280
+#, c-format
+msgid "hivexsh: error getting node name of node %zx\n"
+msgstr "hivexsh : erreur en récupérant le nom du nœud %zx\n"
+
+#: sh/hivexsh.c:419
+#, c-format
+msgid "hivexsh: you must load a hive file first using 'load hivefile'\n"
+msgstr ""
+"hivexsh : vous devez charger un fichier hive en utilisant « load hivefile »\n"
+
+#: sh/hivexsh.c:440
+#, c-format
+msgid "hivexsh: unknown command '%s', use 'help' for help summary\n"
+msgstr ""
+"hivexsh : commande « %s » inconnue, utilisez « help » pour obtenir un résumé "
+"de l'aide\n"
+
+#: sh/hivexsh.c:450
+#, c-format
+msgid "hivexsh: load: no hive file name given to load\n"
+msgstr ""
+"hivexsh : load : aucun nom de fichier hive donné à la fonction « load »\n"
+
+#: sh/hivexsh.c:466
+#, c-format
+msgid ""
+"hivexsh: failed to open hive file: %s: %m\n"
+"\n"
+"If you think this file is a valid Windows binary hive file (_not_\n"
+"a regedit *.reg file) then please run this command again using the\n"
+"hivexsh option '-d' and attach the complete output _and_ the hive file\n"
+"which fails into a bug report at https://bugzilla.redhat.com/\n"
+"\n"
+msgstr ""
+"hivexsh : échec de l'ouverture du fichier hive : %s : %m\n"
+"\n"
+"Si vous pensez que ce fichier est un fichier binaire hive de Windows valide "
+"(_pas_\n"
+"un fichier regedit *.reg) alors veuillez lancer à nouveau cette commande, "
+"avec\n"
+"l'option hivexsh « -d », et joindre le résultat complet _avec_ le fichier "
+"hive\n"
+"qui échoue dans un rapport d'anomalie à l'adresse https://bugzilla.redhat."
+"com/\n"
+"\n"
+
+#: sh/hivexsh.c:499 sh/hivexsh.c:608 sh/hivexsh.c:1074
+#, c-format
+msgid "hivexsh: '%s' command should not be given arguments\n"
+msgstr "hivexsh : la commande « %s » ne doit pas avoir d'arguments\n"
+
+#: sh/hivexsh.c:541
+#, c-format
+msgid ""
+"%s: %s: \\ characters in path are doubled - are you escaping the path "
+"parameter correctly?\n"
+msgstr ""
+"%s : %s : les caractères « \\ » sont doublés dans le chemin, échappez-vous "
+"correctement le chemin en paramètre ?\n"
+
+#: sh/hivexsh.c:579
+#, c-format
+msgid "hivexsh: cd: subkey '%s' not found\n"
+msgstr "hivexsh : cd : la sous-clé « %s » est introuvable\n"
+
+#: sh/hivexsh.c:597
+#, c-format
+msgid ""
+"Navigate through the hive's keys using the 'cd' command, as if it\n"
+"contained a filesystem, and use 'ls' to list the subkeys of the\n"
+"current key.  Full documentation is in the hivexsh(1) manual page.\n"
+msgstr ""
+"Naviguez dans les clés de hive à l'aide de la commande « cd », comme si il\n"
+"contenait un système de fichiers, et utilisez « ls » pour lister les sous-"
+"clés de la\n"
+"clé courrante. Toute la documentation est disponible dans la page de manuel "
+"de hivexsh(1).\n"
+
+#: sh/hivexsh.c:672
+#, c-format
+msgid "%s: %s: key not found\n"
+msgstr "%s : %s : clé introuvable\n"
+
+#: sh/hivexsh.c:848 sh/hivexsh.c:952 sh/hivexsh.c:978 sh/hivexsh.c:1007
+#, c-format
+msgid "%s: %s: invalid integer parameter (%s returned %d)\n"
+msgstr "%s : %s : paramètre entier invalide (%s a retourné %d)\n"
+
+#: sh/hivexsh.c:853 sh/hivexsh.c:958 sh/hivexsh.c:984 sh/hivexsh.c:1013
+#, c-format
+msgid "%s: %s: integer out of range\n"
+msgstr "%s : %s : entier hors limites\n"
+
+#: sh/hivexsh.c:875 sh/hivexsh.c:893
+#, c-format
+msgid "hivexsh: setval: unexpected end of input\n"
+msgstr "hivexsh : setval : fin inattendue de l'entrée\n"
+
+#: sh/hivexsh.c:914 sh/hivexsh.c:933
+#, c-format
+msgid ""
+"hivexsh: string(utf16le): only 7 bit ASCII strings are supported for input\n"
+msgstr ""
+"hivexsh : string(utf16le) : seules les chaines ASCII 7 bits sont supportées "
+"pour l'entrée\n"
+
+#: sh/hivexsh.c:1044
+#, c-format
+msgid "hivexsh: setval: trailing garbage after hex string\n"
+msgstr ""
+"hivexsh : setval : effacement du tampon après lecture de la chaîne "
+"hexadécimale\n"
+
+#: sh/hivexsh.c:1051
+#, c-format
+msgid ""
+"hivexsh: setval: cannot parse value string, please refer to the man page "
+"hivexsh(1) for help: %s\n"
+msgstr ""
+"hivexsh : setval : impossible d'analyser la valeur de la chaîne, veuillez "
+"vous référer à la page de manuel de hivexsh(1) pour obtenir de l'aide : %s\n"
+
+#: sh/hivexsh.c:1080
+#, c-format
+msgid "hivexsh: del: the root node cannot be deleted\n"
+msgstr "hivexsh : del : le nœud racine ne peut pas être supprimé\n"
+
+#: xml/hivexml.c:78
+#, c-format
+msgid "%s: failed to write XML document\n"
+msgstr "%s : échec de l'écriture du document XML\n"
+
+#: xml/hivexml.c:111
+#, c-format
+msgid "hivexml: missing name of input file\n"
+msgstr "hivexml : nom du fichier en entrée manquant\n"
+
+#: xml/hivexml.c:130
+#, c-format
+msgid "xmlNewTextWriterFilename: failed to create XML writer\n"
+msgstr ""
+"xmlNewTextWriterFilename : échec de la création du tampon d'écriture XML\n"
