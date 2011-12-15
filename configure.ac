@@ -171,13 +171,13 @@ AS_IF([test "x$with_readline" != xno],
         ])])
 
 dnl For i18n.
-AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.17])
+dnl AM_GNU_GETTEXT([external])
+dnl AM_GNU_GETTEXT_VERSION([0.17])
 
 dnl libxml2.
-PKG_CHECK_MODULES([LIBXML2], [libxml-2.0])
-AC_SUBST([LIBXML2_CFLAGS])
-AC_SUBST([LIBXML2_LIBS])
+dnl PKG_CHECK_MODULES([LIBXML2], [libxml-2.0])
+dnl AC_SUBST([LIBXML2_CFLAGS])
+dnl AC_SUBST([LIBXML2_LIBS])
 
 dnl hivexsh depends on open_memstream, which is absent on OS X.
 AC_CHECK_FUNC([open_memstream])
