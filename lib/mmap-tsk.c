@@ -35,6 +35,7 @@ static int sighandle_installed = 0;
 static int g_fd = -1;
 static void *g_map = NULL;
 static int g_len = -1;
+static hive_h *g_h = NULL;
 
 static void
 handler(int sig, siginfo_t *si, void *unused)
@@ -44,7 +45,8 @@ handler(int sig, siginfo_t *si, void *unused)
     off_t off;
 
     len = READAHEAD;
-    fprintf(stderr, "Got SIGSEGV at address: 0x%lx %p %p\n", (long) addr, addr + len, g_map + g_len);
+    if (g_h->msglvl >= 2)
+        fprintf(stderr, "Got SIGSEGV at address: 0x%lx %p %p\n", (long) addr, addr + len, g_map + g_len);
     addr = (void *)((unsigned long)addr & ~(PAGESZ - 1));
     if (!(g_map && addr >= g_map && addr < g_map + g_len)) {
         exit(-1);
@@ -59,7 +61,7 @@ handler(int sig, siginfo_t *si, void *unused)
         fprintf(stderr, "mprotect %p %d\n", addr, len);
         exit(-2);
     }
-    if (pread(g_fd, addr, len, off) < 0) {
+    if (g_h->read(g_fd, addr, len, off) < 0) {
         exit(-3);
     }
 }
@@ -105,7 +107,8 @@ hivex__rpl_mmap (hive_h *h,
     g_fd = fd;
     g_map = p_map;
     g_len = len;
-    fprintf(stderr, "mapping %p len %d, fd %d\n", p_map, len, fd);
+    g_h = h;
+    fprintf(stderr, "mapping %p len %ld, fd %d\n", p_map, (int)len, fd);
     return p_map;
 }
 
@@ -117,6 +120,7 @@ hivex__rpl_munmap (hive_h *h, void *p_addr, size_t len)
 
     g_fd = -1;
     g_map = NULL;
+    g_h = NULL;
     free(p_addr);
     return 0;
 }

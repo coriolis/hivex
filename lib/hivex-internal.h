@@ -21,6 +21,10 @@
 
 #include <stddef.h>
 
+typedef int (* clbk_open)(const char *filename, int flags);
+typedef ssize_t (* clbk_read)(int fd, void *buf, size_t count, size_t off);
+typedef ssize_t (* clbk_size)(int fd);
+
 struct hive_h {
   char *filename;
   int fd;
@@ -60,10 +64,15 @@ struct hive_h {
   size_t endblocks;             /* Offset to next block allocation (0
                                    if not allocated anything yet). */
 
+    /* callbacks to open/read/seek apis */
+    clbk_open open;
+    clbk_read read;
+    clbk_size get_size;
 #ifndef HAVE_MMAP
   /* Internal data for mmap replacement */
   void *p_winmap;
 #endif
+
 };
 
 #define STREQ(a,b) (strcmp((a),(b)) == 0)

@@ -123,6 +123,7 @@ typedef struct hive_set_value hive_set_value;
 
 /* Functions. */
 extern hive_h *hivex_open (const char *filename, int flags);
+hive_h *hivex_open_clbks (int flags, void *open, void *read, void *sz);
 extern int hivex_close (hive_h *h);
 extern hive_node_h hivex_root (hive_h *h);
 extern int64_t hivex_last_modified (hive_h *h);

@@ -1,4 +1,5 @@
 # hivex generated file
+# hivex generated file
 # WARNING: THIS FILE IS GENERATED FROM:
 #   generator/generator.ml
 # ANY CHANGES YOU MAKE TO THIS FILE WILL BE LOST.
@@ -41,6 +42,7 @@
         hivex_node_timestamp;
         hivex_node_values;
         hivex_open;
+        hivex_open_clbks;
         hivex_root;
         hivex_value_dword;
         hivex_value_key;
