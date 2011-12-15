@@ -29,7 +29,9 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <errno.h>
+#if 0
 #include <iconv.h>
+#endif
 #include <sys/stat.h>
 #include <assert.h>
 
@@ -1638,9 +1640,20 @@ hivex_value_value (hive_h *h, hive_value_h value,
   return ret;
 }
 
+
 static char *
 windows_utf16_to_utf8 (/* const */ char *input, size_t len)
 {
+    char* outbuf = calloc (len + 1, sizeof(char));
+  int i=0, j=0;
+
+    for(i=0;i<len/2;i++)
+        outbuf[i]=input[i*2];
+    outbuf[len]= '\0';
+
+    return outbuf;
+
+#if 0
   iconv_t ic = iconv_open ("UTF-8", "UTF-16");
   if (ic == (iconv_t) -1)
     return NULL;
@@ -1692,6 +1705,7 @@ windows_utf16_to_utf8 (/* const */ char *input, size_t len)
   iconv_close (ic);
 
   return out;
+#endif
 }
 
 char *
