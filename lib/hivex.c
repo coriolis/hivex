@@ -274,7 +274,7 @@ hivex_open (const char *filename, int flags)
   h->size = statbuf.st_size;
 
   if (!h->writable) {
-    h->addr = mmap (NULL, h->size, PROT_READ, MAP_SHARED, h->fd, 0);
+    h->addr = mmap2 (NULL, h->size, PROT_READ, MAP_SHARED, h->fd, 0);
     if (h->addr == MAP_FAILED)
       goto error;
 
@@ -497,7 +497,7 @@ hivex_open (const char *filename, int flags)
     free (h->bitmap);
     if (h->addr && h->size && h->addr != MAP_FAILED) {
       if (!h->writable)
-        munmap (h->addr, h->size);
+        munmap2 (h->addr, h->size);
       else
         free (h->addr);
     }
@@ -561,7 +561,7 @@ hivex_open_clbks (int flags, void *op, void *rd, void *sz)
     h->size = h->get_size(h->fd);
 
   if (!h->writable) {
-    h->addr = mmap (NULL, h->size, PROT_READ, MAP_SHARED, h->fd, 0);
+    h->addr = mmap2 (NULL, h->size, PROT_READ, MAP_SHARED, h->fd, 0);
     if (h->addr == MAP_FAILED)
       goto error;
 
@@ -784,7 +784,7 @@ hivex_open_clbks (int flags, void *op, void *rd, void *sz)
     free (h->bitmap);
     if (h->addr && h->size && h->addr != MAP_FAILED) {
       if (!h->writable)
-        munmap (h->addr, h->size);
+        munmap2 (h->addr, h->size);
       else
         free (h->addr);
     }
@@ -806,7 +806,7 @@ hivex_close (hive_h *h)
 
   free (h->bitmap);
   if (!h->writable)
-    munmap (h->addr, h->size);
+    munmap2 (h->addr, h->size);
   else
     free (h->addr);
   if (h->fd >= 0)
