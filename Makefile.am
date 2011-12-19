@@ -21,7 +21,7 @@ ACLOCAL_AMFLAGS = -I m4
 export to_tool_file_cmd=func_convert_file_noop
 
 #SUBDIRS = gnulib/lib generator lib images gnulib/tests xml po
-SUBDIRS = gnulib/lib generator lib images gnulib/tests
+SUBDIRS = gnulib/lib lib
 
 if HAVE_HIVEXSH
 SUBDIRS += sh
