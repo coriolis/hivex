@@ -22,6 +22,7 @@
 #include <stddef.h>
 
 typedef int (* clbk_open)(const char *filename, int flags);
+typedef int (* clbk_close)(int fd);
 typedef ssize_t (* clbk_read)(int fd, void *buf, size_t count, size_t off);
 typedef ssize_t (* clbk_size)(int fd);
 
@@ -66,6 +67,7 @@ struct hive_h {
 
     /* callbacks to open/read/seek apis */
     clbk_open open;
+    clbk_close close;
     clbk_read read;
     clbk_size get_size;
 #ifndef HAVE_MMAP

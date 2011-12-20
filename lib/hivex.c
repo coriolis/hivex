@@ -274,7 +274,7 @@ hivex_open (const char *filename, int flags)
   h->size = statbuf.st_size;
 
   if (!h->writable) {
-    h->addr = mmap (NULL, h->size, PROT_READ, MAP_SHARED, h->fd, 0);
+    h->addr = mmap2 (NULL, h->size, PROT_READ, MAP_SHARED, h->fd, 0);
     if (h->addr == MAP_FAILED)
       goto error;
 
@@ -511,7 +511,7 @@ hivex_open (const char *filename, int flags)
 }
 
 hive_h *
-hivex_open_clbks (int flags, void *op, void *rd, void *sz)
+hivex_open_clbks (int flags, void *op, void *cl, void *rd, void *sz)
 {
   hive_h *h = NULL;
   char *filename = "DUMMY";
@@ -538,6 +538,7 @@ hivex_open_clbks (int flags, void *op, void *rd, void *sz)
     goto error;
 
   h->open =(clbk_open) op ? op: open;
+  h->close =(clbk_close) cl ? cl: close;
   h->read =(clbk_read) rd ? rd: read;
   h->get_size =(clbk_size) sz ? sz: NULL;
 
@@ -561,7 +562,8 @@ hivex_open_clbks (int flags, void *op, void *rd, void *sz)
     h->size = h->get_size(h->fd);
 
   if (!h->writable) {
-    h->addr = mmap (NULL, h->size, PROT_READ, MAP_SHARED, h->fd, 0);
+      fprintf (stderr, "hivex_open: trying to map file at %p\n", h->addr);
+    h->addr = mmap2 (NULL, h->size, PROT_READ, MAP_SHARED, h->fd, 0);
     if (h->addr == MAP_FAILED)
       goto error;
 
@@ -578,7 +580,7 @@ hivex_open_clbks (int flags, void *op, void *rd, void *sz)
     /* We don't need the file descriptor along this path, since we
      * have read all the data.
      */
-    if (close (h->fd) == -1)
+    if (h->close (h->fd) == -1)
       goto error;
     h->fd = -1;
   }
@@ -789,7 +791,7 @@ hivex_open_clbks (int flags, void *op, void *rd, void *sz)
         free (h->addr);
     }
     if (h->fd >= 0)
-      close (h->fd);
+      h->close (h->fd);
     free (h->filename);
     free (h);
   }
@@ -810,7 +812,7 @@ hivex_close (hive_h *h)
   else
     free (h->addr);
   if (h->fd >= 0)
-    r = close (h->fd);
+    r = h->close (h->fd);
   else
     r = 0;
   free (h->filename);
