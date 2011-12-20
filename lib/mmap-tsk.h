@@ -26,8 +26,8 @@
 /* Hack to pass the hive handle to the replacement mmap and munmap
  * functions. XXX
  */
-#define mmap(a,b,c,d,e,f) hivex__rpl_mmap(h,(a),(b),(c),(d),(e),(f))
-#define munmap(a,b) hivex__rpl_munmap(h,(a),(b))
+#define mmap2(a,b,c,d,e,f) hivex__rpl_mmap(h,(a),(b),(c),(d),(e),(f))
+#define munmap2(a,b) hivex__rpl_munmap(h,(a),(b))
 
 /*
  * hivex replacement mmap

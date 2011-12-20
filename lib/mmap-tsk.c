@@ -27,6 +27,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <errno.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 #define PAGESZ 4096L
 #define READAHEAD (PAGESZ * 2)
@@ -91,7 +93,7 @@ hivex__rpl_mmap (hive_h *h,
         return MAP_FAILED;
     if (flags != MAP_SHARED)
         return MAP_FAILED;
-
+/*
     if (posix_memalign(&p_map, PAGESZ, len) != 0) {
         return MAP_FAILED;
     }
@@ -99,6 +101,15 @@ hivex__rpl_mmap (hive_h *h,
         free(p_map);
         return MAP_FAILED;
     }
+*/
+    //do anonymous unreserved mapping
+    p_map = (void *)mmap(NULL, len, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE , fd, 0);
+    if(p_map == MAP_FAILED)
+    {
+        perror("Map failed: \n");
+        return MAP_FAILED;
+    }
+        
     if (!sighandle_installed) {
         install_sighandler();
         sighandle_installed = 1;
@@ -121,6 +132,6 @@ hivex__rpl_munmap (hive_h *h, void *p_addr, size_t len)
     g_fd = -1;
     g_map = NULL;
     g_h = NULL;
-    free(p_addr);
+    munmap(p_addr, g_len);
     return 0;
 }
